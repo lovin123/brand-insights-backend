@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Enable CORS for frontend
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
@@ -26,6 +26,6 @@ async function bootstrap() {
 
   const port = Number(process.env.PORT) || 3001;
   await app.listen(port);
-  console.log(`🚀 Brand Insights API is running on: http://localhost:${port}`);
+  console.log(`🚀 Brand Insights API is running on ${port}`);
 }
 bootstrap();
